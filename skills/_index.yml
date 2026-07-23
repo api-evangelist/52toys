@@ -1,0 +1,12 @@
+generated: '2026-07-17'
+method: generated
+source: https://hi52toys.com/llms.txt
+note: >-
+  Skill generated from the provider's own published UCP tool surface (/llms.txt +
+  /.well-known/ucp); every operation name is verbatim from the store's
+  documentation, not invented.
+skills:
+- file: 52toys-agentic-shopping.md
+  name: Shop the 52TOYS store as an agent (UCP)
+  api: mcp/52toys-mcp.yml
+  operations: [search_catalog, catalog_lookup, create_cart, create_checkout, update_checkout, complete_checkout]

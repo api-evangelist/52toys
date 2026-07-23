@@ -1,7 +1,17 @@
 aid: 52toys
 name: 52TOYS
-description: '52TOYS is a company surfaced as a portfolio company of qiming and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  52TOYS is a leading IP-driven toy and collectibles company founded in Beijing
+  in 2015 on the brand proposition "Play for Fun." It designs and produces blind
+  boxes, articulated figures, mechanical and model kits, plush, keychains, and
+  lifestyle merchandise across 100+ owned and licensed IPs — original hits like
+  BEASTBOX, Panda Roll, Nook, and POUKAPOUKA alongside global licenses such as
+  Crayon Shin-chan, Minions, and Tom and Jerry. Its official global storefront
+  runs on Shopify at hi52toys.com (52toys.com redirects there) and is notably
+  agent-native: it publishes an llms.txt, a Universal Commerce Protocol (UCP)
+  merchant profile, a hosted UCP MCP endpoint for agent-driven commerce, and
+  Shopify customer-account OpenID Connect discovery. Surfaced in the API
+  Evangelist network as a Qiming portfolio company.
 url: https://raw.githubusercontent.com/api-evangelist/52toys/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,13 +19,54 @@ x-backed-by:
 - qiming
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
+image: https://hi52toys.com/cdn/shop/files/52Toys_Logo.png?v=1763377030&width=2048
 tags:
 - Company
 - Consumer
-apis: []
+- Collectibles
+- Toys
+- Retail
+- Ecommerce
+- Shopify
+- Agentic Commerce
+apis:
+- name: 52TOYS Agentic Commerce (UCP)
+  description: >-
+    Agent-driven commerce over the official 52TOYS Shopify storefront via the
+    Universal Commerce Protocol MCP endpoint — catalog search, cart, and
+    buyer-approved checkout. Read-only catalog browsing is unauthenticated;
+    transacting uses Shopify customer-account OAuth/OIDC.
+  humanURL: https://hi52toys.com/llms.txt
+  baseURL: https://hi52toys.com/api/ucp/mcp
+  tags:
+  - Ecommerce
+  - Agentic Commerce
+  - MCP
+  - Shopify
+  properties:
+  - type: MCPServer
+    url: mcp/52toys-mcp.yml
+  - type: Authentication
+    url: authentication/52toys-authentication.yml
+  - type: OAuthScopes
+    url: scopes/52toys-scopes.yml
+  - type: Conventions
+    url: conventions/52toys-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +75,36 @@ maintainers:
 common:
 - type: Website
   url: https://52toys.com
+- type: DeveloperPortal
+  url: https://hi52toys.com/llms.txt
+- type: LLMsTxt
+  url: llms/52toys-llms.txt
+- type: MCPServer
+  url: mcp/52toys-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Authentication
+  url: authentication/52toys-authentication.yml
+- type: OAuthScopes
+  url: scopes/52toys-scopes.yml
+- type: Conventions
+  url: conventions/52toys-conventions.yml
+- type: WellKnown
+  url: well-known/52toys-well-known.yml
+- type: DomainSecurity
+  url: security/52toys-domain-security.yml
+- type: SignUp
+  url: https://hi52toys.com/account/register
+- type: Login
+  url: https://hi52toys.com/account/login
+- type: Support
+  url: https://hi52toys.com/pages/contact
+- type: TermsOfService
+  url: https://hi52toys.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://hi52toys.com/policies/privacy-policy
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,28 @@
+generated: '2026-07-17'
+method: searched
+source: live probes of https://hi52toys.com/.well-known/*
+host: https://hi52toys.com
+note: >-
+  52TOYS runs its official storefront on Shopify at hi52toys.com (52toys.com 302
+  redirects there). The store exposes an agent-native discovery surface: a
+  Universal Commerce Protocol (UCP) profile and Shopify customer-account OIDC
+  discovery documents. The apex 52toys.com host itself serves none of these.
+documents:
+- path: /.well-known/ucp
+  status: 200
+  file: 52toys-ucp.json
+  description: Universal Commerce Protocol merchant profile (agent-driven commerce discovery)
+- path: /.well-known/openid-configuration
+  status: 200
+  file: 52toys-openid-configuration.json
+  description: OpenID Connect discovery for Shopify customer accounts
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: 52toys-oauth-authorization-server.json
+  description: RFC 8414 OAuth authorization server metadata (identical payload to OIDC discovery)
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

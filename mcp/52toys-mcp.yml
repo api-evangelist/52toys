@@ -1,0 +1,68 @@
+generated: '2026-07-17'
+method: searched
+status: published
+source: https://hi52toys.com/.well-known/ucp
+docs: https://hi52toys.com/llms.txt
+note: >-
+  52TOYS's official Shopify storefront (hi52toys.com) publishes a live, hosted
+  MCP endpoint via the Universal Commerce Protocol (UCP, https://ucp.dev). The
+  endpoint speaks JSON-RPC MCP and requires the UCP discovery handshake (an agent
+  profile URI) before tools/list will return schemas — an unauthenticated
+  tools/list returns error -32001 invalid_profile_url. The tools below are the
+  documented UCP shopping capabilities from the store's own /llms.txt and
+  /.well-known/ucp capability manifest; their JSON schemas live under
+  https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json. This is a
+  Shopify-platform MCP surface exposed on the merchant's own domain, not a
+  bespoke 52TOYS server.
+server:
+  name: 52toys-ucp-shopping
+  transport: http
+  protocol: mcp
+  url: https://hi52toys.com/api/ucp/mcp
+  origin_endpoint: https://f63c1c.myshopify.com/api/ucp/mcp
+  spec: https://ucp.dev/2026-04-08/specification/overview/
+  schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+  supported_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  auth:
+    style: oauth2-oidc
+    note: >-
+      Read-only catalog browsing is unauthenticated; transacting uses Shopify
+      customer-account OAuth/OIDC (see authentication/52toys-authentication.yml).
+      Checkout requires contemporaneous human buyer approval at the moment of
+      payment.
+  rate_limited: true
+  rate_limit_note: MCP endpoint is rate-limited per IP; back off on HTTP 429.
+tools:
+- name: search_catalog
+  description: Search the store catalog for products matching a buyer's intent.
+  capability: dev.ucp.shopping.catalog.search
+- name: catalog_lookup
+  description: Look up specific catalog products/variants by identifier.
+  capability: dev.ucp.shopping.catalog.lookup
+- name: create_cart
+  description: Create a cart and add desired items.
+  capability: dev.ucp.shopping.cart
+- name: create_checkout
+  description: Start the purchase flow from a cart.
+  capability: dev.ucp.shopping.checkout
+- name: update_checkout
+  description: Set shipping address, shipping method, and discounts on a checkout.
+  capability: dev.ucp.shopping.fulfillment
+- name: complete_checkout
+  description: Finalize the purchase (buyer must explicitly approve payment).
+  capability: dev.ucp.shopping.checkout
+capabilities:
+- dev.ucp.shopping.catalog.search
+- dev.ucp.shopping.catalog.lookup
+- dev.ucp.shopping.cart
+- dev.ucp.shopping.checkout
+- dev.ucp.shopping.fulfillment
+- dev.ucp.shopping.discount
+- dev.ucp.shopping.order
+- dev.shopify.catalog
+payment_handlers:
+- com.google.pay
+- dev.shopify.card
+- dev.shopify.shop_pay

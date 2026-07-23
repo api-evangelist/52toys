@@ -1,0 +1,43 @@
+generated: '2026-07-17'
+method: searched
+source: https://hi52toys.com/llms.txt
+note: >-
+  Cross-cutting conventions for agent interaction with the 52TOYS Shopify
+  storefront, captured from the store's published /llms.txt and UCP profile. This
+  is a commerce surface (UCP MCP + Shopify Storefront JSON), not a traditional
+  developer REST API — there is no documented idempotency-key contract, so no
+  Idempotency pointer is emitted.
+authentication:
+  style: oauth2-oidc
+  detail: >-
+    Read-only browsing needs no auth; transacting uses Shopify customer-account
+    OAuth/OIDC. See authentication/52toys-authentication.yml and
+    scopes/52toys-scopes.yml.
+buyer_approval:
+  required: true
+  detail: >-
+    Agents must not complete payment without explicit, contemporaneous buyer
+    consent at the moment of payment. Without live approval, route via Shop Pay
+    (https://shop.app/SKILL.md).
+context_parameters:
+  detail: Pass context.address_country and context.currency for accurate pricing and availability.
+rate_limiting:
+  signaled: true
+  detail: The UCP MCP endpoint is rate-limited per IP. Back off on HTTP 429 responses.
+  numeric_limits_published: false
+versioning:
+  scheme: dated-protocol-version
+  detail: UCP protocol versions are dated (2026-04-08 latest stable, 2026-01-23 prior).
+  current: '2026-04-08'
+read_only_browsing:
+  detail: Unauthenticated Shopify Storefront JSON endpoints for catalog reads.
+  endpoints:
+  - 'GET /collections/all'
+  - 'GET /products/{handle}.json'
+  - 'GET /collections/{handle}/products.json'
+  - 'GET /search?q={query}&type=product'
+  - 'GET /sitemap.xml'
+agent_discovery:
+  llms_txt: https://hi52toys.com/llms.txt
+  agents_md: https://hi52toys.com/agents.md
+  ucp_profile: https://hi52toys.com/.well-known/ucp

@@ -1,0 +1,26 @@
+generated: '2026-07-17'
+method: searched
+source: https://hi52toys.com/.well-known/openid-configuration
+docs: https://hi52toys.com/.well-known/oauth-authorization-server
+note: >-
+  OAuth/OIDC scopes advertised by the Shopify customer-account authorization
+  server backing the 52TOYS storefront and its UCP agentic-commerce MCP endpoint.
+  Captured verbatim from scopes_supported in the live discovery document.
+schemes:
+- name: shopify-customer-account-oidc
+  issuer: https://shopify.com/authentication/77378748731
+  authorizationUrl: https://account.hi52toys.com/authentication/oauth/authorize
+  tokenUrl: https://account.hi52toys.com/authentication/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; returns an ID token for the customer.
+  sources: [well-known/52toys-openid-configuration.json]
+- scope: email
+  description: Access to the customer's email address and email_verified claim.
+  sources: [well-known/52toys-openid-configuration.json]
+- scope: customer-account-api:full
+  description: Full access to the Shopify Customer Account API on the shopper's behalf.
+  sources: [well-known/52toys-openid-configuration.json]
+- scope: customer-account-mcp-api:full
+  description: Full access to the customer-account MCP API for agent-driven commerce actions.
+  sources: [well-known/52toys-openid-configuration.json]
