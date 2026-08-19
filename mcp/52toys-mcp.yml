@@ -3,17 +3,13 @@ method: searched
 status: published
 source: https://hi52toys.com/.well-known/ucp
 docs: https://hi52toys.com/llms.txt
-note: >-
-  52TOYS's official Shopify storefront (hi52toys.com) publishes a live, hosted
-  MCP endpoint via the Universal Commerce Protocol (UCP, https://ucp.dev). The
-  endpoint speaks JSON-RPC MCP and requires the UCP discovery handshake (an agent
-  profile URI) before tools/list will return schemas — an unauthenticated
-  tools/list returns error -32001 invalid_profile_url. The tools below are the
-  documented UCP shopping capabilities from the store's own /llms.txt and
-  /.well-known/ucp capability manifest; their JSON schemas live under
-  https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json. This is a
-  Shopify-platform MCP surface exposed on the merchant's own domain, not a
-  bespoke 52TOYS server.
+note: 52TOYS's official Shopify storefront (hi52toys.com) publishes a live, hosted MCP endpoint via the
+  Universal Commerce Protocol (UCP, https://ucp.dev). The endpoint speaks JSON-RPC MCP and requires the
+  UCP discovery handshake (an agent profile URI) before tools/list will return schemas — an unauthenticated
+  tools/list returns error -32001 invalid_profile_url. The tools below are the documented UCP shopping
+  capabilities from the store's own /llms.txt and /.well-known/ucp capability manifest; their JSON schemas
+  live under https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json. This is a Shopify-platform
+  MCP surface exposed on the merchant's own domain, not a bespoke 52TOYS server.
 server:
   name: 52toys-ucp-shopping
   transport: http
@@ -27,11 +23,9 @@ server:
   - '2026-01-23'
   auth:
     style: oauth2-oidc
-    note: >-
-      Read-only catalog browsing is unauthenticated; transacting uses Shopify
-      customer-account OAuth/OIDC (see authentication/52toys-authentication.yml).
-      Checkout requires contemporaneous human buyer approval at the moment of
-      payment.
+    note: Read-only catalog browsing is unauthenticated; transacting uses Shopify customer-account OAuth/OIDC
+      (see authentication/52toys-authentication.yml). Checkout requires contemporaneous human buyer approval
+      at the moment of payment.
   rate_limited: true
   rate_limit_note: MCP endpoint is rate-limited per IP; back off on HTTP 429.
 tools:
@@ -66,3 +60,11 @@ payment_handlers:
 - com.google.pay
 - dev.shopify.card
 - dev.shopify.shop_pay
+deployment:
+  mode: remote
+  endpoint: https://hi52toys.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
