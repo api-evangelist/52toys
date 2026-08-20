@@ -41,6 +41,15 @@ tags:
 - Collectibles
 - Toys
 - Retail
+- E-Commerce
+- Shopify
+- Agentic Commerce
+tags_raw:
+- Company
+- Consumer
+- Collectibles
+- Toys
+- Retail
 - Ecommerce
 - Shopify
 - Agentic Commerce
@@ -54,6 +63,11 @@ apis:
   humanURL: https://hi52toys.com/llms.txt
   baseURL: https://hi52toys.com/api/ucp/mcp
   tags:
+  - E-Commerce
+  - Agentic Commerce
+  - MCP
+  - Shopify
+  tags_raw:
   - Ecommerce
   - Agentic Commerce
   - MCP
