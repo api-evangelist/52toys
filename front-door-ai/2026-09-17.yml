@@ -1,0 +1,25 @@
+# Front Door AI Index — 52toys — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: 52toys
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: 52toys.com
+  final_host: hi52toys.com
+  ownership: own
+  owner: 52toys
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 1
+  host_score: 1
+  density: 0.44
+  words: 2259
+  tiers:
+    agentic: 0
+    core: 0
+    model: 1
+  ambiguous: 0
+  top_terms:
+    Gemini: 1
