@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/52toys/integrations
+- https://n8n.io/integrations/52toys/
+- https://composio.dev/toolkits/52toys
+- https://monid.ai/tools/52toys
+checked:
+- https://composio.dev/toolkits/52toys
+- https://monid.ai/tools/52toys
+- https://n8n.io/integrations/52toys/
+- https://zapier.com/apps/52toys/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
