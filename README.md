@@ -64,6 +64,100 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-52TOYS is a company surfaced as a portfolio company of qiming and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+52TOYS is a leading IP-driven toy and collectibles company founded in Beijing in 2015 on the brand proposition "Play for Fun." It designs and produces blind boxes, articulated figures, mechanical and model kits, plush, keychains, and lifestyle merchandise across 100+ owned and licensed IPs — original hits like BEASTBOX, Panda Roll, Nook, and POUKAPOUKA alongside global licenses such as Crayon Shin-chan, Minions, and Tom and Jerry. Its official global storefront runs on Shopify at hi52toys.com (52toys.com redirects there) and is notably agent-native: it publishes an llms.txt, a Universal Commerce Protocol (UCP) merchant profile, a hosted UCP MCP endpoint for agent-driven commerce, and Shopify customer-account OpenID Connect discovery. Surfaced in the API Evangelist network as a Qiming portfolio company.
 
-Backed by: qiming — https://52toys.com
+**Areas:** Company · Consumer · Collectibles · Toys · Retail · E-Commerce · Shopify · Agentic Commerce
+
+## 52TOYS on APIs.io
+
+Everything profiled for 52TOYS is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/52toys/](https://apis.io/providers/52toys/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [52TOYS Agentic Commerce (UCP)](https://apis.io/apis/52toys/52toys-agentic-commerce-ucp/) — Agent-driven commerce over the official 52TOYS Shopify storefront via the Universal Commerce Protocol MCP endpoint — catalog search, cart, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [52toys-ucp-shopping](https://apis.io/servers/52toys/52toys-ucp-shopping/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [52Toys Authentication](https://apis.io/security/52toys/52toys-authentication/)
+- [52Toys Domain Security](https://apis.io/security/52toys/52toys-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [52Toys Scopes](https://apis.io/scopes/52toys/52toys-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://52toys.com)
+- [Sign up](https://hi52toys.com/account/register)
+- [Support](https://hi52toys.com/pages/contact)
+- [Terms of service](https://hi52toys.com/policies/terms-of-service)
+- [Privacy policy](https://hi52toys.com/policies/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 22.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 14.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | platform (partial credit) |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/52toys/](https://apis.io/providers/52toys/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 52TOYS: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/52toys/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
